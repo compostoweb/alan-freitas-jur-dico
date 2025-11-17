@@ -29,7 +29,7 @@ const FinalCTA = () => {
               Agende sua consulta empresarial
             </Button>
             
-            <Button size="lg" variant="outline" className="font-semibold text-lg h-auto shadow-elegant hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto bg-lime-50 text-slate-900 text-left my-0 py-[24px] px-0 mx-[24px]">
+            <Button size="lg" variant="outline" className="font-semibold text-lg h-auto shadow-elegant hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto bg-lime-50 text-slate-900 text-left my-0 py-[24px] px-0 mx-[50px]">
               <Phone className="w-5 h-5 mr-2" />
               Entre em contato
             </Button>
