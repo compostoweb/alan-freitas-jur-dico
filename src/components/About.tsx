@@ -108,7 +108,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16"
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
             <div className="bg-card p-8 rounded-xl shadow-card border border-border hover:shadow-elegant transition-shadow">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -118,9 +118,9 @@ const About = () => {
               </div>
               <ul className="space-y-3">
                 {academicFormation.map((item, index) => (
-                  <li key={index} className="text-muted-foreground flex items-start">
+                  <li key={index} className="text-muted-foreground flex items-start text-sm">
                     <span className="text-accent mr-2 flex-shrink-0 font-bold">•</span>
-                    <span>{item}</span>
+                    <span className="leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -133,13 +133,13 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">Atuação Acadêmica</h3>
               </div>
-                <ul className="space-y-3">
-                  {academicWork.map((item, index) => (
-                    <li key={index} className="text-muted-foreground flex items-start">
-                      <span className="text-accent mr-2 flex-shrink-0 font-bold">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
+              <ul className="space-y-3">
+                {academicWork.map((item, index) => (
+                  <li key={index} className="text-muted-foreground flex items-start text-sm">
+                    <span className="text-accent mr-2 flex-shrink-0 font-bold">•</span>
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -150,32 +150,36 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">Publicações</h3>
               </div>
-                <ul className="space-y-3">
-                  {publications.map((item, index) => (
-                    <li key={index} className="text-muted-foreground flex items-start">
-                      <span className="text-accent mr-2 flex-shrink-0 font-bold">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ul className="space-y-3">
+                {publications.map((item, index) => (
+                  <li key={index} className="text-muted-foreground flex items-start text-sm">
+                    <span className="text-accent mr-2 flex-shrink-0 font-bold">•</span>
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          <div className="bg-navy-deep p-10 rounded-lg text-primary-foreground">
-            <h3 className="text-3xl font-bold mb-6 text-center">
-              Por que essa experiência faz diferença para sua empresa
-            </h3>
-            <p className="text-primary-foreground/90 mb-6 text-center">
-              A combinação entre conhecimento técnico, vivência prática e atuação estratégica resulta em:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {differentials.map((item, index) => (
-                <div key={index} className="flex items-start">
-                  <span className="text-accent mr-2 flex-shrink-0 font-bold">✓</span>
-                  <span className="text-primary-foreground/95">{item}</span>
-                </div>
-              ))}
+          <div className="bg-gradient-hero p-12 rounded-2xl shadow-elegant relative overflow-hidden animate-fade-in">
+            {/* Decorative element */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+            
+            <div className="relative z-10">
+              <h3 className="text-3xl font-bold mb-6 text-center text-primary-foreground">
+                Por que essa experiência faz diferença para sua empresa
+              </h3>
+              <p className="text-primary-foreground/90 mb-8 text-center max-w-3xl mx-auto">
+                A combinação entre conhecimento técnico, vivência prática e atuação estratégica resulta em:
+              </p>
+              <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                {differentials.map((item, index) => (
+                  <div key={index} className="flex items-start bg-primary-foreground/5 p-4 rounded-lg backdrop-blur-sm">
+                    <span className="text-accent mr-3 flex-shrink-0 font-bold text-lg">✓</span>
+                    <span className="text-primary-foreground/95">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
