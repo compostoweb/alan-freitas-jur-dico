@@ -1,3 +1,5 @@
+import { GraduationCap, BookOpen, Award } from "lucide-react";
+
 const About = () => {
   const academicFormation = [
     "Mestre em Direito Econômico pela Universidade Cândido Mendes",
@@ -38,26 +40,82 @@ const About = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-6">
-            Quem é o advogado Alan Freitas
-          </h2>
+    <section className="py-24 bg-background relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <div className="inline-block mb-4">
+              <span className="text-accent font-semibold text-sm tracking-wider uppercase">Especialista</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Quem é o advogado Alan Freitas
+            </h2>
+          </div>
           
-          <div className="space-y-8 mb-12">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              O advogado Alan Freitas é reconhecido pela atuação estratégica em Direito Empresarial, Tributário e Societário. Sua formação reúne Direito, Economia, Finanças, Gestão e Neurociência do Comportamento, oferecendo uma visão completa e precisa para orientar empresas em decisões estruturais.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Área para foto profissional do Alan */}
+            <div className="relative animate-scale-in order-2 lg:order-1">
+              <div className="aspect-square rounded-2xl overflow-hidden border-2 border-accent/20 shadow-elegant bg-gradient-to-br from-navy-medium to-navy-deep">
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <GraduationCap className="w-24 h-24 text-accent mx-auto mb-4 opacity-50" />
+                    <p className="text-primary-foreground/60 text-sm">Área para foto profissional<br />Dr. Alan Freitas</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Stats card */}
+              <div className="absolute -bottom-6 -right-6 bg-card p-6 rounded-xl shadow-elegant border border-border">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-accent">13+</div>
+                    <div className="text-xs text-muted-foreground">Especializações</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-accent">3</div>
+                    <div className="text-xs text-muted-foreground">Livros</div>
+                  </div>
+                </div>
+              </div>
+            </div>
             
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              A experiência acadêmica e profissional consolida sua autoridade e entrega segurança às empresas atendidas.
-            </p>
+            <div className="space-y-6 animate-slide-up order-1 lg:order-2">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                O advogado Alan Freitas é reconhecido pela atuação estratégica em Direito Empresarial, Tributário e Societário. Sua formação reúne Direito, Economia, Finanças, Gestão e Neurociência do Comportamento, oferecendo uma visão completa e precisa para orientar empresas em decisões estruturais.
+              </p>
+              
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                A experiência acadêmica e profissional consolida sua autoridade e entrega segurança às empresas atendidas.
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2 bg-accent/10 px-4 py-2 rounded-lg">
+                  <GraduationCap className="w-5 h-5 text-accent" />
+                  <span className="text-sm font-semibold text-foreground">Mestre em Direito</span>
+                </div>
+                <div className="flex items-center gap-2 bg-accent/10 px-4 py-2 rounded-lg">
+                  <BookOpen className="w-5 h-5 text-accent" />
+                  <span className="text-sm font-semibold text-foreground">Professor OAB/RJ</span>
+                </div>
+                <div className="flex items-center gap-2 bg-accent/10 px-4 py-2 rounded-lg">
+                  <Award className="w-5 h-5 text-accent" />
+                  <span className="text-sm font-semibold text-foreground">Autor Publicado</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-card p-8 rounded-lg shadow-card border border-border">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Formação Acadêmica</h3>
+          <div className="grid lg:grid-cols-3 gap-8 mb-16"
+            <div className="bg-card p-8 rounded-xl shadow-card border border-border hover:shadow-elegant transition-shadow">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <GraduationCap className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground">Formação Acadêmica</h3>
+              </div>
               <ul className="space-y-3">
                 {academicFormation.map((item, index) => (
                   <li key={index} className="text-muted-foreground flex items-start">
@@ -68,9 +126,13 @@ const About = () => {
               </ul>
             </div>
 
-            <div className="space-y-8">
-              <div className="bg-card p-8 rounded-lg shadow-card border border-border">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Atuação Acadêmica</h3>
+            <div className="bg-card p-8 rounded-xl shadow-card border border-border hover:shadow-elegant transition-shadow">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <BookOpen className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground">Atuação Acadêmica</h3>
+              </div>
                 <ul className="space-y-3">
                   {academicWork.map((item, index) => (
                     <li key={index} className="text-muted-foreground flex items-start">
@@ -78,11 +140,16 @@ const About = () => {
                       <span>{item}</span>
                     </li>
                   ))}
-                </ul>
-              </div>
+              </ul>
+            </div>
 
-              <div className="bg-card p-8 rounded-lg shadow-card border border-border">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Publicações</h3>
+            <div className="bg-card p-8 rounded-xl shadow-card border border-border hover:shadow-elegant transition-shadow">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <Award className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground">Publicações</h3>
+              </div>
                 <ul className="space-y-3">
                   {publications.map((item, index) => (
                     <li key={index} className="text-muted-foreground flex items-start">
