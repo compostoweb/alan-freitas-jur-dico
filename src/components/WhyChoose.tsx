@@ -1,32 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, MessageSquare, Target, TrendingUp, Clock } from "lucide-react";
-
 const WhyChoose = () => {
-  const benefits = [
-    {
-      icon: MessageSquare,
-      title: "Comunicação clara",
-      description: "Sem juridiquês, direto ao ponto"
-    },
-    {
-      icon: Target,
-      title: "Estratégias sólidas e comprovadas",
-      description: "Baseadas em anos de experiência"
-    },
-    {
-      icon: TrendingUp,
-      title: "Visão multidisciplinar",
-      description: "Direito, Economia, Finanças e Gestão"
-    },
-    {
-      icon: Clock,
-      title: "Atendimento ágil e confidencial",
-      description: "Prioridade para sua empresa"
-    }
-  ];
-
-  return (
-    <section className="py-24 bg-background relative overflow-hidden">
+  const benefits = [{
+    icon: MessageSquare,
+    title: "Comunicação clara",
+    description: "Sem juridiquês, direto ao ponto"
+  }, {
+    icon: Target,
+    title: "Estratégias sólidas e comprovadas",
+    description: "Baseadas em anos de experiência"
+  }, {
+    icon: TrendingUp,
+    title: "Visão multidisciplinar",
+    description: "Direito, Economia, Finanças e Gestão"
+  }, {
+    icon: Clock,
+    title: "Atendimento ágil e confidencial",
+    description: "Prioridade para sua empresa"
+  }];
+  return <section className="py-24 bg-background relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       
@@ -36,7 +28,7 @@ const WhyChoose = () => {
             <div className="inline-block mb-4">
               <span className="text-accent font-semibold text-sm tracking-wider uppercase">Excelência</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl font-bold text-foreground mb-6 md:text-4xl">
               Por que empresas escolhem o advogado Alan Freitas
             </h2>
           </div>
@@ -65,19 +57,15 @@ const WhyChoose = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {benefits.map((benefit, index) => (
-              <div 
-                key={index} 
-                className="group bg-card p-6 rounded-xl border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+            {benefits.map((benefit, index) => <div key={index} className="group bg-card p-6 rounded-xl border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
                 <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                   <benefit.icon className="w-7 h-7 text-accent" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
                 <p className="text-sm text-muted-foreground">{benefit.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <div className="text-center animate-fade-in">
@@ -87,8 +75,6 @@ const WhyChoose = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhyChoose;
