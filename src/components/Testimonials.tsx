@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const testimonials = [
   {
@@ -7,27 +8,54 @@ const testimonials = [
     role: "Cliente",
     text: "Excelente profissional! A assessoria jurídica foi fundamental para resolver meu caso de forma rápida e eficiente. Recomendo!",
     rating: 5,
-    date: "Há 2 meses"
+    date: "Há 2 meses",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maria"
   },
   {
     name: "João Santos",
     role: "Cliente",
     text: "Atendimento impecável e muito profissional. Dr. Alan demonstrou amplo conhecimento e me deixou muito seguro durante todo o processo.",
     rating: 5,
-    date: "Há 1 mês"
+    date: "Há 1 mês",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Joao"
   },
   {
     name: "Ana Paula",
     role: "Cliente",
     text: "Serviço de altíssima qualidade. Fui muito bem atendida e meu problema foi resolvido com toda a atenção aos detalhes.",
     rating: 5,
-    date: "Há 3 semanas"
+    date: "Há 3 semanas",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ana"
+  },
+  {
+    name: "Carlos Mendes",
+    role: "Cliente",
+    text: "Profissional extremamente competente e dedicado. Resolveu minha questão jurídica com excelência e agilidade.",
+    rating: 5,
+    date: "Há 1 semana",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Carlos"
+  },
+  {
+    name: "Fernanda Costa",
+    role: "Cliente",
+    text: "Recomendo de olhos fechados! Atendimento humanizado e resultados concretos. Muito satisfeita com o trabalho.",
+    rating: 5,
+    date: "Há 2 semanas",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Fernanda"
+  },
+  {
+    name: "Roberto Lima",
+    role: "Cliente",
+    text: "Profissionalismo impecável! Dr. Alan foi essencial para garantir meus direitos. Super indico!",
+    rating: 5,
+    date: "Há 4 semanas",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Roberto"
   }
 ];
 
 const Testimonials = () => {
   const averageRating = 5.0;
-  const totalReviews = 48;
+  const totalReviews = 52;
 
   return (
     <section className="py-20 bg-background">
@@ -77,32 +105,21 @@ const Testimonials = () => {
                 </p>
 
                 {/* Author Info */}
-                <div className="flex items-center justify-between pt-4 border-t border-border/50">
-                  <div>
+                <div className="flex items-center gap-3 pt-4 border-t border-border/50">
+                  <Avatar className="h-10 w-10">
+                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                    <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1">
                     <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.date}</p>
                   </div>
-                  <p className="text-xs text-muted-foreground">{testimonial.date}</p>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Google Reviews Link */}
-        <div className="text-center mt-12">
-          <a 
-            href="https://www.google.com/search?q=advogado+alan" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
-          >
-            Ver todas as avaliações no Google
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
       </div>
     </section>
   );
