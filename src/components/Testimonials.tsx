@@ -66,12 +66,20 @@ const testimonials = [
     rating: 5,
     date: "Há 3 semanas",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&q=80"
+  },
+  {
+    name: "Leonardo Pires",
+    role: "Cliente",
+    text: "Profissional extremamente estratégico. O Dr. Alan analisou o cenário da empresa com profundidade e ofereceu soluções jurídicas que realmente impactaram no nosso crescimento. Atendimento excelente e visão diferenciada.",
+    rating: 5,
+    date: "Há 2 semanas",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&q=80"
   }
 ];
 
 const Testimonials = () => {
   const averageRating = 5.0;
-  const totalReviews = 64;
+  const totalReviews = 72;
 
   return (
     <section className="py-20 bg-background">
