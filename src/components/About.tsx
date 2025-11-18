@@ -108,7 +108,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            {/* Left Column - Formação Acadêmica */}
             <div className="bg-card p-8 rounded-xl shadow-card border border-border hover:shadow-elegant transition-shadow">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -126,38 +127,41 @@ const About = () => {
               </ul>
             </div>
 
-            <div className="bg-card p-8 rounded-xl shadow-card border border-border hover:shadow-elegant transition-shadow">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <BookOpen className="w-6 h-6 text-accent" />
+            {/* Right Column - Atuação Acadêmica e Publicações */}
+            <div className="space-y-8">
+              <div className="bg-card p-8 rounded-xl shadow-card border border-border hover:shadow-elegant transition-shadow">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <BookOpen className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">Atuação Acadêmica</h3>
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">Atuação Acadêmica</h3>
+                <ul className="space-y-3">
+                  {academicWork.map((item, index) => (
+                    <li key={index} className="text-muted-foreground flex items-start text-sm">
+                      <span className="text-accent mr-2 flex-shrink-0 font-bold">•</span>
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-3">
-                {academicWork.map((item, index) => (
-                  <li key={index} className="text-muted-foreground flex items-start text-sm">
-                    <span className="text-accent mr-2 flex-shrink-0 font-bold">•</span>
-                    <span className="leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            <div className="bg-card p-8 rounded-xl shadow-card border border-border hover:shadow-elegant transition-shadow">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <Award className="w-6 h-6 text-accent" />
+              <div className="bg-card p-8 rounded-xl shadow-card border border-border hover:shadow-elegant transition-shadow">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <Award className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">Publicações</h3>
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">Publicações</h3>
+                <ul className="space-y-3">
+                  {publications.map((item, index) => (
+                    <li key={index} className="text-muted-foreground flex items-start text-sm">
+                      <span className="text-accent mr-2 flex-shrink-0 font-bold">•</span>
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-3">
-                {publications.map((item, index) => (
-                  <li key={index} className="text-muted-foreground flex items-start text-sm">
-                    <span className="text-accent mr-2 flex-shrink-0 font-bold">•</span>
-                    <span className="leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 
