@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
+import logo from "@/assets/logo-alan-freitas.png";
 
 const menuItems = [
   { label: "Início", href: "#hero" },
@@ -45,8 +46,8 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+          ? "bg-primary/98 backdrop-blur-md shadow-lg"
+          : "bg-primary"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -55,9 +56,9 @@ const Navbar = () => {
           <a
             href="#hero"
             onClick={(e) => handleClick(e, "#hero")}
-            className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+            className="flex items-center hover:opacity-90 transition-opacity"
           >
-            Dr. Alan
+            <img src={logo} alt="Alan Freitas Advogado" className="h-10 w-auto" />
           </a>
 
           {/* Desktop Menu */}
@@ -67,13 +68,13 @@ const Navbar = () => {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleClick(e, item.href)}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative group"
+                className="text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors relative group"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[hsl(var(--gold))] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
-            <Button asChild size="sm">
+            <Button asChild size="sm" variant="default" className="bg-accent hover:bg-accent/90">
               <a href="#contact" onClick={(e) => handleClick(e, "#contact")}>
                 Agendar Consulta
               </a>
@@ -82,7 +83,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-primary-foreground hover:text-primary-foreground/80 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -96,20 +97,20 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 bg-background/95 backdrop-blur-md border-t border-border/50 animate-fade-in">
+          <div className="md:hidden py-4 bg-primary/98 backdrop-blur-md border-t border-primary-foreground/10 animate-fade-in">
             <div className="flex flex-col gap-4">
               {menuItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleClick(e, item.href)}
-                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors px-4 py-2"
+                  className="text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors px-4 py-2"
                 >
                   {item.label}
                 </a>
               ))}
               <div className="px-4">
-                <Button asChild className="w-full">
+                <Button asChild className="w-full bg-accent hover:bg-accent/90">
                   <a href="#contact" onClick={(e) => handleClick(e, "#contact")}>
                     Agendar Consulta
                   </a>

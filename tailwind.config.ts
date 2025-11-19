@@ -64,8 +64,10 @@ export default {
         },
         gold: {
           DEFAULT: "hsl(var(--gold))",
+          dark: "hsl(var(--gold-dark))",
           light: "hsl(var(--gold-light))",
         },
+        coral: "hsl(var(--coral))",
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
