@@ -43,12 +43,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-primary/98 backdrop-blur-md shadow-lg"
-          : "bg-primary"
-      }`}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background shadow-md transition-all duration-300"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -68,13 +63,13 @@ const Navbar = () => {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleClick(e, item.href)}
-                className="text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors relative group"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors relative group"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[hsl(var(--gold))] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
-            <Button asChild size="sm" variant="default" className="bg-accent hover:bg-accent/90">
+            <Button asChild size="sm" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">
               <a href="#contact" onClick={(e) => handleClick(e, "#contact")}>
                 Agendar Consulta
               </a>
@@ -83,7 +78,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-primary-foreground hover:text-primary-foreground/80 transition-colors"
+            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -97,20 +92,20 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 bg-primary/98 backdrop-blur-md border-t border-primary-foreground/10 animate-fade-in">
+          <div className="md:hidden py-4 bg-background border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
               {menuItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleClick(e, item.href)}
-                  className="text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors px-4 py-2"
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors px-4 py-2"
                 >
                   {item.label}
                 </a>
               ))}
               <div className="px-4">
-                <Button asChild className="w-full bg-accent hover:bg-accent/90">
+                <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
                   <a href="#contact" onClick={(e) => handleClick(e, "#contact")}>
                     Agendar Consulta
                   </a>
