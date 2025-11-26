@@ -53,7 +53,7 @@ const Navbar = () => {
             onClick={(e) => handleClick(e, "#hero")}
             className="flex items-center hover:opacity-90 transition-opacity"
           >
-            <img src={logo} alt="Alan Freitas Advogado" className="h-10 w-auto" />
+            <img src={logo} alt="Alan Freitas Advogado" className="h-16 w-auto" />
           </a>
 
           {/* Desktop Menu */}

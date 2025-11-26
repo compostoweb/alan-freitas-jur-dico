@@ -16,16 +16,16 @@ const Hero = () => {
       />
       
       {/* Decorative elements */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-20 w-72 h-72 bg-accent/15 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       
       <div className="container relative z-10 mx-auto px-4 py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <div className="inline-block mb-6">
-              <div className="flex items-center gap-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full border border-accent/30">
+              <div className="flex items-center gap-2 bg-accent/25 backdrop-blur-sm px-4 py-2 rounded-full border border-accent/40 shadow-lg shadow-accent/20">
                 <Scale className="w-4 h-4 text-accent" />
-                <span className="text-accent font-medium text-sm">Advocacia Empresarial</span>
+                <span className="text-accent font-semibold text-sm">Advocacia Empresarial</span>
               </div>
             </div>
             
@@ -34,12 +34,12 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-10 leading-relaxed">
-              Para empresas que buscam <span className="text-accent font-semibold">segurança</span>, <span className="text-accent font-semibold">crescimento</span> e <span className="text-accent font-semibold">blindagem jurídica</span>
+              Para empresas que buscam <span className="text-accent font-bold drop-shadow-lg">segurança</span>, <span className="text-accent font-bold drop-shadow-lg">crescimento</span> e <span className="text-accent font-bold drop-shadow-lg">blindagem jurídica</span>
             </p>
             
             <div className="flex flex-wrap gap-6 mb-10">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-accent/25 flex items-center justify-center border border-accent/40 shadow-lg shadow-accent/20">
                   <Shield className="w-6 h-6 text-accent" />
                 </div>
                 <div>
@@ -49,7 +49,7 @@ const Hero = () => {
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-accent/25 flex items-center justify-center border border-accent/40 shadow-lg shadow-accent/20">
                   <TrendingUp className="w-6 h-6 text-accent" />
                 </div>
                 <div>
@@ -59,18 +59,18 @@ const Hero = () => {
               </div>
             </div>
             
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-10 py-7 h-auto shadow-elegant hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-7 h-auto shadow-xl shadow-accent/30 hover:shadow-2xl hover:shadow-accent/40 transition-all duration-300 hover:scale-105">
               Agende uma consulta empresarial
             </Button>
           </div>
           
           {/* Área para foto do Alan */}
           <div className="relative hidden lg:block animate-scale-in">
-            <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border-4 border-accent/30 shadow-elegant">
+            <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border-4 border-accent/50 shadow-xl shadow-accent/20">
               {/* Placeholder para foto do Alan */}
               <div className="absolute inset-0 bg-gradient-to-br from-navy-medium to-navy-deep flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-32 h-32 rounded-full bg-accent/20 mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-32 h-32 rounded-full bg-accent/25 mx-auto mb-4 flex items-center justify-center border border-accent/40 shadow-lg shadow-accent/20">
                     <Scale className="w-16 h-16 text-accent" />
                   </div>
                   <p className="text-primary-foreground/60 text-sm">Área para foto do<br />Dr. Alan Freitas</p>
@@ -81,7 +81,7 @@ const Hero = () => {
             {/* Decorative card */}
             <div className="absolute -bottom-6 -right-6 bg-card p-6 rounded-xl shadow-elegant border border-border max-w-xs">
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-3 h-3 rounded-full bg-accent animate-pulse" />
+                <div className="w-3 h-3 rounded-full bg-accent animate-pulse shadow-lg shadow-accent/50" />
                 <span className="text-sm font-semibold text-foreground">Consultoria Ativa</span>
               </div>
               <p className="text-xs text-muted-foreground">Atendimento estratégico para sua empresa</p>
