@@ -22,6 +22,9 @@ export default defineConfig(({ mode }) => ({
       credentials: true
     }
   },
+  preview: {
+    allowedHosts: ["chatwoot-v4-lp-alan-adv.ylkjah.easypanel.host"]
+  },
   // ...existing code...
 
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
