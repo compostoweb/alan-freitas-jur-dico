@@ -87,14 +87,49 @@ const Testimonials = () => {
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <img 
+            {/*<img 
               src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
               alt="Google" 
               className="h-6"
             />
-            <span className="text-muted-foreground">Avaliações</span>
+              <img 
+              src="src/assets/thumb-up_8050265.png" 
+              alt="Google reviews" 
+              className="h-10"
+            />
+            <span className="text-muted-foreground" ><strong>Avaliações</strong></span>*/}
+          
+            
           </div>
-          <div className="flex items-center justify-center gap-2 mb-2">
+              <div className="flex flex-col items-center text-center mb-12">
+  {/* 1. Título e Subtítulo com mais hierarquia */}
+  <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
+    Excelência jurídica reconhecida
+  </h2>
+  <p className="text-lg text-gray-500 max-w-2xl mb-8 leading-relaxed">
+    Compromisso com a transparência e a defesa incansável dos seus direitos.
+  </p>
+
+  {/* 2. O Bloco de Autoridade (O segredo do Premium) */}
+  <div className="flex flex-col items-center justify-center space-y-2">
+    {/* Número Gigante */}
+    <span className="text-6xl font-black text-gray-900">
+      5.0
+    </span>
+    
+    {/* Suas Estrelas (Mantenha o seu componente de estrelas aqui dentro) */}
+    <div className="flex gap-1 text-yellow-400 text-2xl my-2">
+       ★★★★★
+    </div>
+
+    {/* Legenda técnica e elegante */}
+    <p className="text-sm font-medium text-gray-400 uppercase tracking-widest mt-2">
+      Baseado na experiência de 72 clientes
+    </p>
+  </div>
+</div>
+
+          {/*<div className="flex items-center justify-center gap-2 mb-2">
             <span className="text-4xl font-bold text-foreground">{averageRating}</span>
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (
@@ -103,8 +138,8 @@ const Testimonials = () => {
             </div>
           </div>
           <p className="text-muted-foreground">
-            Baseado em {totalReviews} avaliações do Google
-          </p>
+            Classificação máxima baseada na experiência de 72 clientes atendidos 
+          </p>*/}
         </div>
 
         {/* Testimonials Grid */}
