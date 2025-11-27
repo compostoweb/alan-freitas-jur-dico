@@ -1,0 +1,13 @@
+node_modules
+dist
+.vscode
+.git
+.gitignore
+venv
+env
+.env
+.env.local
+npm-debug.log
+.DS_Store
+bun.lockb
+docker-compose.override.yml

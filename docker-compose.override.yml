@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  dev:
+    # dev-specific overrides: hot-reload friendly, bind localhost (host port configured via .env)
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app:delegated
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=development
+    ports:
+      - "${DEV_HOST_PORT:-8081}:8080"
+    command: sh -lc "npm ci --prefer-offline --no-audit --no-fund && npm run dev -- --host"
+    tty: true
+    stdin_open: true
