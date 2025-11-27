@@ -23,7 +23,9 @@ export default defineConfig(({ mode }) => ({
     }
   },
   preview: {
-    allowedHosts: ["chatwoot-v4-lp-alan-adv.ylkjah.easypanel.host"]
+    allowedHosts: ["chatwoot-v4-lp-alan-adv.ylkjah.easypanel.host",
+                   "lp-alan.compostoweb.com.br"
+                  ]
   },
   // ...existing code...
 
