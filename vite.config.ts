@@ -4,11 +4,26 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
+//export default defineConfig(({ mode }) => ({
+//  server: {
+//    host: "::",
+//    port: 8080,
+//  },
+// ...existing code...
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    cors: {
+      origin: [
+        "https://chatwoot-v4-lp-alan-adv.ylkjah.easypanel.host",
+        "http://chatwoot-v4-lp-alan-adv.ylkjah.easypanel.host"
+      ],
+      credentials: true
+    }
   },
+  // ...existing code...
+
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
